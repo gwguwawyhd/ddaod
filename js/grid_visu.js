@@ -358,7 +358,7 @@ function change_canv_img(canv, img) {
 	base_img_file = new Image;
 	base_img_file.src = img;
 	base_img_file.onload = function() {
-		context.drawImage(this, 0,0, 416, 416,0,0,canv[0].width,canv[0].height);
+		context.drawImage(this, 0,0, 640, 640,0,0,canv[0].width,canv[0].height);
 	};
 
 }

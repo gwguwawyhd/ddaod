@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TODO times">
+    <meta name="author" content="TODO"> <!--TODOFINAL-->
+
+	<link href="style.css" rel="stylesheet">
+	<title>Deeply Dreaming about Object Detection</title>
+
+
+
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/grid_visu.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+	
+<div id="outer">
+	<div id="inner">
+
+				
+			<div id="headsection">
+			<h1 id="title">Deeply Dreaming about Object Detection</h1>
+				  
+				  
+			<h3 id="authors">Authors: Anonymised</h3>
+				  
+			<h4 id="subtitle">Submission for <a href="https://xai4cv.github.io">the second Explainable AI for Computer Vision (XAI4CV) workshop</a> at <a href="https://cvpr.thecvf.com">CVPR 2023</a></h5>
+				
+				  
+			<h2 id="abstract">Abstract</h2>
+			<p id="abstract_txt">In this article we demonstrate the applicability of the DeepDream approach within the YOLOX detection Convolutional Neural Network (CNN). Our experiments show, that YOLO has represents objects relative to the scene composition. In other words: YOLO not only recognizes objects, but has a clear understanding about the scene context and about possible objects within the scene. We demonstrate this finding with dynamic web-based demonstrations, visualizing our experiments interactively. These plots are available via this website.</h2>
+			</div>
+
+			<div class="figure">
+				<a id="fig1"></a> 
+				<h3 class="figure_title"> Figure 1: Workflow of the Deep Detection Dream approach</h3>
+
+
+
+				<object data="figs/deepdetectiondream.svg" width="100%"></object>
+
+
+			<div class="figure_caption">Depiction of the general workflow of the Deep Detection Dream approach. First, YOLOX is used for generating bounding box outputs of a test image (1). This bounding box output is then used as a target for optimizing a grey image (2). <a href="./figs/deepdetectiondream.svg">Download figure</a>
+			</div>
+				 
+			</div>
+
+
+			<div class="figure">
+				<a id="fig2"></a> 
+				<h3 class="figure_title"> Figure 2: Visualization of different hyperparameter settings</h3>
+
+				<div class="grid_view2">
+					<canvas id="par_orig" style="width:100%;"></canvas>
+					<canvas id="par_opt" style="width:100%;"></canvas>
+				</div>
+			<div class="slide_view">
+				<div class="slide_label">Ratio</div>
+				<div class="slidecontainer"><input type="range" min="0" max="2" value="1" class="slider" id="par_ratio"></div>
+				<div class="slide_label" id="par_ratio_val"></div>
+			</div>
+				
+			<div class="slide_view">
+				<div class="slide_label">Learning Rate</div>
+				<div class="slidecontainer"><input type="range" min="0" max="2" value="1" class="slider" id="par_lr"></div>
+				<div class="slide_label" id="par_lr_val"></div>
+			</div>
+			<div class="slide_view">
+				<div class="slide_label">Amplification</div>
+				<div class="slidecontainer"><input type="range" min="0" max="2" value="1" class="slider" id="par_amp"></div>
+				<div class="slide_label" id="par_amp_val"></div>
+			</div>
+
+
+			<div class="figure_caption">A change in hyperparameters have different effects. The Ratio hyperparameter describes a ratio of mean square error of bounding box outputs and total variation loss. If total variation loss is rated higher, simpler forms are generated. If the parameter is too low, however, rather high-frequency noise is generated. The second parameter to choose is the learning rate of gradient descent. The third parameter to choose is amplification rate of multiplier mask.
+			</div>
+				
+		</div>
+
+
+
+
+		<div class="figure">
+			<a id="fig3"></a> 
+			<h3 class="figure_title">Figure 3: Optimization Results</h3>
+
+
+			<ul id="img_select">
+		  	</ul>
+
+				<div class="grid_view2">
+					<canvas id="or_im" style="width:100%;"></canvas>
+					<canvas id="opt_im" style="width:100%;"></canvas>
+				</div>
+				<div class="grid_view2">
+					<div class="checkboxdiv"><input type="checkbox" id="or_bb" /><label for="or_bb"> show bounding boxes </label></div>
+					<div class="checkboxdiv"><input type="checkbox" id="opt_bb" /><label for="opt_bb"> show bounding boxes </label></div>
+				</div>
+
+			
+			<div class="figure_caption">Different result images of Deep Detection Dream with or without bounding box visualization.
+			</div>
+
+		</div>
+
+
+
+
+
+		<div class="figure">
+			<a id="citeus"></a> 
+
+			<h3 class="figure_title">Cite Us</h3>
+			<h3 class="cite_div">This article needs to get accepted first, before a reference will spawn here.</h3>
+
+		</div>
+
+
+
+
+
+
+
+
+
+		</div> <!-- inner -->
+
+
+	</div> <!-- outer -->
+
+
+</body>
+
+
+</html>

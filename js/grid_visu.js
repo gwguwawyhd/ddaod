@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 var ul=document.getElementById('img_select');
 
-var max_i = 34;
+var max_i = 16;
 
 for (var ti=0;ti<=max_i;++ti){
     var li=document.createElement('li');
     ul.appendChild(li);
     var img=document.createElement('img');
 
-    img.src="figs/optim_visu/thumb_"+ti+".jpg";
+    img.src="figs/optim_visu/"+ti+"_thumb.jpg";
     img.id="opt_img_"+ti;
     img.class="opt_img";
     img.optid = ti;
@@ -61,22 +61,26 @@ for (var ti=0;ti<=max_i;++ti){
 	change_optimgs(0);
 
 
-	document.getElementById('or_bb').oninput = function() {change_optimgs(0);};
-	document.getElementById('opt_bb').oninput = function() {change_optimgs(0);};
+	document.getElementById('or_bb').oninput = function() {change_optimgs(null);};
+	document.getElementById('opt_bb').oninput = function() {change_optimgs(null);};
 
 });
 
+var img_selected = 0;
+
 function  change_optimgs (optid) {
+	if(optid == null) optid = img_selected;
 	if(document.getElementById('or_bb').checked) {
-		change_canv_img('#or_im', 'figs/optim_visu/orbb_'+optid+'.jpg');
+		change_canv_img('#or_im', 'figs/optim_visu/'+optid+'_orbb.jpg');
 	} else {
-		change_canv_img('#or_im', 'figs/optim_visu/original_'+optid+'.jpg');
+		change_canv_img('#or_im', 'figs/optim_visu/'+optid+'_original.jpg');
 	}
 	if(document.getElementById('opt_bb').checked) {
-		change_canv_img('#opt_im', 'figs/optim_visu/opbb_'+optid+'.jpg');
+		change_canv_img('#opt_im', 'figs/optim_visu/'+optid+'_opbb.jpg');
 	} else {
-		change_canv_img('#opt_im', 'figs/optim_visu/optim_'+optid+'.jpg');
+		change_canv_img('#opt_im', 'figs/optim_visu/'+optid+'_optim.jpg');
 	}
+	img_selected = optid;
 }
 
 
@@ -101,7 +105,11 @@ function init_param_visu(){
 	slamp.max = par_amps.length -1;
 	slamp.value = Math.floor(slamp.length/2)
 
-	
+	document.getElementById("par_ratio_val").innerHTML = par_ratios[slratio.value];
+	document.getElementById("par_lr_val").innerHTML = par_lrs[sllr.value];
+	document.getElementById("par_amp_val").innerHTML = par_amps[slamp.value];
+	update_slider_img();
+
 	slratio.oninput = function(){
 		par_ratio = par_ratios[this.value];
 		update_slider_img();

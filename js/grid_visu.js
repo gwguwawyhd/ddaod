@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 var ul=document.getElementById('img_select');
 
-var max_i = 12;
+var max_i = 35;
 
 for (var ti=0;ti<=max_i;++ti){
     var li=document.createElement('li');
@@ -61,12 +61,15 @@ for (var ti=0;ti<=max_i;++ti){
 	change_optimgs(0);
 
 
-	document.getElementById('or_bb').oninput = function() {change_optimgs(0);};
-	document.getElementById('opt_bb').oninput = function() {change_optimgs(0);};
+	document.getElementById('or_bb').oninput = function() {change_optimgs(null);};
+	document.getElementById('opt_bb').oninput = function() {change_optimgs(null);};
 
 });
 
+var img_selected = 0;
+
 function  change_optimgs (optid) {
+	if(optid == null) optid = img_selected;
 	if(document.getElementById('or_bb').checked) {
 		change_canv_img('#or_im', 'figs/optim_visu/orbb_'+optid+'.jpg');
 	} else {
@@ -77,6 +80,7 @@ function  change_optimgs (optid) {
 	} else {
 		change_canv_img('#opt_im', 'figs/optim_visu/optim_'+optid+'.jpg');
 	}
+	img_selected = optid;
 }
 
 

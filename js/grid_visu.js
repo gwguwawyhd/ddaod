@@ -7,9 +7,9 @@ var publisher = null;
 
 
 // global variables for hyperparameter visualizations
-var par_lrs = [0.001, 0.01, 0.1, 1.0, 10.0];
-var par_amps = [1, 10, 100, 1000];
-var par_ratios = [0.0, 0.25, 0.5, 0.75, 0.95];
+var par_lrs = [0.01, 0.1, 1.0, 10.0];
+var par_amps = [1, 10, 100];
+var par_ratios = [0.05, 0.2, 0.4, 0.6, 0.8, 0.95];
 
 var par_lr = par_lrs[Math.floor(par_lrs.length/2)];
 var par_amp = par_amps[Math.floor(par_amps.length/2)];
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 var ul=document.getElementById('img_select');
 
-var max_i = 12;
+var max_i = 34;
 
 for (var ti=0;ti<=max_i;++ti){
     var li=document.createElement('li');
@@ -123,7 +123,8 @@ function init_param_visu(){
 
 
 function update_slider_img() {
-	var img_path = 'figs/'+range_path+'/plain_'+orig_img_id+"_"+par_ratio.toFixed(6)+"_"+par_lr.toFixed(6)+"_"+par_amp+'.jpg';
+	var par_rati = 1-par_ratio;
+	var img_path = 'figs/'+range_path+'/plain_'+orig_img_id+"_"+par_ratio.toFixed(6)+"_"+par_rati.toFixed(6)+"_"+par_lr.toFixed(6)+"_"+par_amp+'.jpg';
 	change_canv_img('#'+opt_canv_id,img_path);
 }
 

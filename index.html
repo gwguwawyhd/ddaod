@@ -28,7 +28,7 @@
 	<div id="inner">
 
 				
-			<div id="headsection">
+			<div id="headsection"><div id="inner_headsection">
 			<h1 id="title">Deeply Dreaming about Object Detection</h1>
 				  
 				  
@@ -38,28 +38,39 @@
 				
 				  
 			<h2 id="abstract">Abstract</h2>
-			<p id="abstract_txt">In this article we demonstrate the applicability of the DeepDream approach within the YOLOX detection Convolutional Neural Network (CNN). Our experiments show, that YOLO has represents objects relative to the scene composition. In other words: YOLO not only recognizes objects, but has a clear understanding about the scene context and about possible objects within the scene. We demonstrate this finding with dynamic web-based demonstrations, visualizing our experiments interactively. These plots are available via this website.</h2>
+			<p id="abstract_txt">
+				
+This article introduces the DeepDream approach for object detection, which allows us to visualize how objects are represented in the YOLO framework. While Explainable Artificial Intelligence (XAI) primarily focuses on feature visualization for classification networks, this study examines object detection. For this more complex task, we found that weighting the importance of different output neurons of the network is necessary for the applicability of the DeepDream optimization approach. This research broadens the understanding of how objects are represented in a Convolutional Neural Network (CNN). Our experiments suggest that YOLO anticipates objects relative to the scene composition. YOLO does not only recognize single objects but it also has a clear representation of scene context, object sub-types, positions, and orientations. We visualize our findings with interactive, web-based demo applications, which are available on this website.
+
+
+
+
+			</p>
 			
 
 			
-			</div>
+			</div></div>
 
-			<div class="figure">
+
+			<div class="figure"><div class="inner_figure">
 				<a id="fig1"></a> 
-				<h3 class="figure_title"> Figure 1: Workflow of the Deep Detection Dream approach</h3>
+				<h3 class="figure_title"> Figure 1: Workflow of the DeepDetectionDream approach</h3>
 
 
 
 				<object data="figs/deepdetectiondream.svg" width="100%"></object>
 
 
-			<div class="figure_caption">Depiction of the general workflow of the Deep Detection Dream approach. First, YOLOX is used for generating bounding box outputs of a test image (1). This bounding box output is then used as a target for optimizing a grey image (2). <a href="./figs/deepdetectiondream.svg">Download figure</a>
+			<div class="figure_caption">
+
+The DeepDetectionDream (D3) approach consists of two phases. In the first phase (1), bounding box information BB_d is extracted from a donor image using YOLOX. In the second phase (2), D3 is utilized to optimize a gray image such that its bounding box output BB_o matches BB_d.
+			 <a href="./figs/deepdetectiondream.pdf">Download figure</a>
 			</div>
 				 
-			</div>
+			</div></div>
 
 
-			<div class="figure">
+			<div class="figure"><div class="inner_figure">
 				<a id="fig2"></a> 
 				<h3 class="figure_title"> Figure 2: Visualization of different hyperparameter settings</h3>
 
@@ -85,29 +96,29 @@
 			</div>
 
 
-			<div class="figure_caption">A change in hyperparameters have different effects. The Ratio hyperparameter describes a ratio of mean square error of bounding box outputs and total variation loss. If total variation loss is rated higher, simpler forms are generated. If the parameter is too low, however, rather high-frequency noise is generated. The second parameter to choose is the learning rate of gradient descent. The third parameter to choose is amplification rate of multiplier mask.
+			<div class="figure_caption">A change in hyperparameters have different effects. The Ratio hyperparameter describes a ratio of mean square error of bounding box outputs and total variation loss. If total variation loss is setup to a higher ratio, simpler forms are generated. If the parameter is too low, however, high-frequency noise is generated. The second slider selects the learning rate of gradient descent. The third selects the amplification rate of the multiplier mask.
 			</div>
 				
-		</div>
+		</div></div>
 
 
 
 
-		<div class="figure">
+			<div class="figure"><div class="inner_figure">
 			<a id="fig3"></a> 
 			<h3 class="figure_title">Figure 3: Optimization Process Video</h3>
 
 				
 				<iframe width="100%" height="616" src="https://www.youtube-nocookie.com/embed/L0Lr-x0rUAs" title="YouTube video player" frameborder="0" allow="repeat; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 				
-			<div class="figure_caption">Video demonstrating the optimization process of several classes of the COCO data set by our proposed Deep Detection Dream approach.
+			<div class="figure_caption">Video of reconstructing several images just by their objects' bounding box representations.
 			</div>
 
-		</div>
+		</div></div>
 
 
 
-		<div class="figure">
+			<div class="figure"><div class="inner_figure">
 			<a id="fig4"></a> 
 			<h3 class="figure_title">Figure 4: Optimization Results</h3>
 
@@ -125,22 +136,22 @@
 				</div>
 
 			
-			<div class="figure_caption">Different result images of Deep Detection Dream with or without bounding box visualization.
+			<div class="figure_caption">Several reconstructed images with and without the predicted bounding boxes. Select an image from the upper film roll to see its optimization image. Bounding boxes of both images estimated by YOLOX can be visualized by checking the corresponding checkbox under the image.
 			</div>
 
-		</div>
+		</div></div>
 
 
 
 
 
-		<div class="figure">
+			<div class="figure"><div class="inner_figure">
 			<a id="citeus"></a> 
 
 			<h3 class="figure_title">Cite Us</h3>
 			<h3 class="cite_div">This article needs to get accepted first, before a reference will spawn here.</h3>
 
-		</div>
+		</div></div>
 
 
 

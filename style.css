@@ -29,7 +29,11 @@ a {
 
 #headsection {
   background-color: rgb(245,245,245);
-  padding: 10px 0px;
+}
+#inner_headsection {
+  width: 95%;
+  max-width: 950px;
+  margin: auto;
 }
 
 #title {
@@ -51,26 +55,35 @@ a {
 }
 
 #abstract {
-  padding: 5px 50px 0px 50px;
+  margin: 0px 0px;
 }
 #abstract_txt {
-  padding: 5px 50px;
+  padding: 10px 0px;
   text-align: justify;
 }
 
+.inner_figure {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: 10px;
+}
+
 .figure {
-padding: 10px 50px;
+background-color: rgb(255,255,255);
 }
 
 .figure:nth-child(odd) {
 background-color: rgb(245,245,245);
 }
+
 .figure_title {
-  padding: 10px 0px;
+  padding: 5px 0px;
 }
+
 .figure_caption {
-  margin: 10px 0px;
-  padding: 0px 5px;
+  margin: 5px 0px;
+  padding: 10px 5px;
   border-left: 2px solid grey;
 }
 
